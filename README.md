@@ -8,30 +8,38 @@ This project focuses on analyzing historical loan data to:
 Identify key drivers of loan default
 Segment customers based on financial and behavioral risk
 Generate actionable insights to improve lending decisions and reduce credit risk
+
 🏗️ End-to-End Workflow
+
 🔹 1. Data Acquisition (Cloud to Local)
 Source: Home Credit dataset (cloud-based repository)
 Processed 300,000+ customer records
 Combined 7+ relational datasets (loan, bureau, payments, credit cards)
+
 🔹 2. Data Storage & Management (SQL Server)
 Loaded raw data into local SQL Server
 Performed joins, aggregations, and cleaning
 Outcome:
 Created a single customer-level dataset
 Final dataset: ~300K rows × 50+ features
+
 🔹 3. Data Transformation & Feature Engineering
+
 📌 Created 30+ business-relevant features:
 Income-to-credit ratio
 EMI-to-income ratio
 Payment delay metrics
 Loan approval behavior
 Credit utilization patterns
+
 📌 Null Handling Strategy:
 ~30% missing credit history data identified
 Treated as first-time customers
 Created flags for better segmentation
+
 📊 Exploratory Data Analysis (EDA)
 🔍 Key Business Findings & Impact
+
 💰 1. EMI Burden → Major Risk Driver
 Customers with EMI > Income:
 Default Rate: 15.1%
@@ -44,6 +52,7 @@ High EMI burden increases default risk by ~2X
 👉 Business Impact:
 
 Avoiding such approvals can reduce defaults by ~7–8 percentage points
+
 ⏳ 2. Late Payment Behavior → Strongest Predictor
 No late payments:
 Default Rate: ~8%
@@ -56,6 +65,7 @@ Late payment behavior increases risk by >120%
 👉 Business Impact:
 
 Filtering high-delay customers can reduce risky approvals by 10–12%
+
 💳 3. Loan Decision Behavior (Overpaid vs Balanced vs Underpaid)
 Category	Default Rate
 Overpaid	10.04%
@@ -68,6 +78,7 @@ Over-financing increases default risk by ~35–40%
 👉 Business Impact:
 
 Restricting over-financed loans can reduce portfolio risk by ~2–3% overall
+
 🏦 4. Credit History Impact
 No credit history:
 Default Rate: ~10–11%
@@ -80,6 +91,7 @@ New customers are ~40–50% riskier
 👉 Business Impact:
 
 Introducing stricter checks for new users can reduce default exposure by ~3–4%
+
 🔄 5. Active vs Closed Loan Behavior
 Segment	Default Rate
 High Risk (Active/No Closed)	10.8%
@@ -92,6 +104,7 @@ Customers without repayment history or with many active loans are significantly 
 👉 Business Impact:
 
 Prioritizing customers with successful loan closures can improve portfolio quality
+
 📊 6. Income-Credit Ratio (Financial Stress Indicator)
 Mid-range borrowers show highest default rates
 High-ratio approvals show slightly lower risk due to stricter screening
@@ -103,11 +116,13 @@ Borrowers near financial limits are the most vulnerable
 
 Optimizing approval thresholds can reduce defaults in the most sensitive segment
 ⚠️ Risk Segmentation (Business-Oriented)
+
 🔹 Created Risk Indicators Based On:
 Financial stress
 Repayment behavior
 Loan mismatch
 Credit exposure
+
 🔹 Key Outcome:
 Segment	Risk Level	Default Rate
 Low Risk	Stable	~5–6%
